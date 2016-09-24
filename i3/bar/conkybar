@@ -1,0 +1,3 @@
+#!/bin/sh
+echo '{"version":1}[[],'
+exec conky -c /etc/i3/bar/.conkyrc

@@ -1,0 +1,10 @@
+#!/bin/bash
+echo '{"version":1}'
+echo '['
+
+while true; do
+    #echo "%{c}`xdotool getactivewindow getwindowname`"
+echo '[{ "full_text": "'$(xdotool getactivewindow getwindowname | sed 's/"/\\\"/g')'" }
+],'
+    #sleep 0.1
+done

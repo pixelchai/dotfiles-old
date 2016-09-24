@@ -158,10 +158,18 @@ set $col6 #000000
 set $col7 #528588
 
 bar {
-	status_command sh $HOME/bin/conky-i3bar
-	# position top
+	position top
+	status_command "sh /etc/i3/bar/barfeeder"
+	tray_output none
+	workspace_buttons no
+}
+
+bar {
+	status_command sh /etc/i3/bar/conky-i3bar
+
+	#position top
 	height 27
-	strip_workspace_numbers yes
+	#strip_workspace_numbers yes
 	font pango:FontAwesome 10
 	#colors {
         #        #background             $col1
@@ -218,3 +226,5 @@ exec --no-startup-id nitrogen --restore
 smart_gaps on
 gaps inner 20
 gaps outer 0
+
+for_window [class="^.*"] border pixel 2
